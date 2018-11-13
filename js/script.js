@@ -18,6 +18,200 @@ $("#projects-filter > li").click(function() {
     $(this).addClass("active");
 });
 
+function visible(item) {
+    var w = $(window);
+    var viewTop = w.scrollTop();
+    var viewBottom = viewTop + w.height();
+    var top = item.offset().top;
+    // var bottom = top + item.height();
+    return top < viewBottom;
+}
+
 window.onload = function () {
+
+    //varsta
+    let currentDate = new Date();
+
+    $(".age").text(" " + currentDate.getFullYear() - 1996 + " ")
+
+    $(".animated:not('.play')").each((index, element) => {
+        if (visible($(element)))
+            $(element).addClass("play");
+    });
+
+    let hamburgerClicked = false;
+
+    //interactiuni hamburger
+    // $(".hamburger > svg").on("click", ()=>{
+    //     if(!hamburgerClicked){
+    //         $(".main").addClass("side-menu")
+    //         $(".hamburger").addClass("clicked")
+    //         hamburgerClicked = true;
+    //     }
+    //     else{
+    //         $(".main").removeClass("side-menu")
+    //         $(".hamburger").removeClass("clicked")
+    //         hamburgerClicked = false;
+    //     }
+    // })
+    $(".hamburger").on("click", ()=>{
+        if(!hamburgerClicked){
+            $(".main.side-menu").removeClass("inactive")
+            $(".main.side-menu").addClass("active")
+            $(".hamburger").addClass("is-active")
+            hamburgerClicked = true;
+        }
+        else{
+            $(".main.side-menu").removeClass("active")
+            $(".main.side-menu").addClass("inactive")
+            $(".hamburger").removeClass("is-active")
+            hamburgerClicked = false;
+        }
+    })
+
+    var feather1Top = $(".feather1-wrapper").offset().top;
+    var feather2Top = $(".feather2-wrapper").offset().top;
+    var feather3Top = $(".feather3-wrapper").offset().top;
+    var contactTop = $("#contact-section").offset().top;
+    var ok = false;
+
+    $(window).scroll(function () {
+
+        var scrollTop = $(window).scrollTop();
+        var viewHeight = $(window).height();
+
+        // $("#projects-section .header").css("top", scrollTop - $("#projects-section").offset().top + "px");
+        // $("#contact-section .header").css("top", scrollTop - $("#contact-section").offset().top + "px");
+
+
+        //tranzitii hero
+        var face = $("#face");
+        face.css("transform", "translateX(" + 200/viewHeight*scrollTop + "%)");
+        $("#hero-text").css({ "transform": "translateY(" + 80 / viewHeight * scrollTop + "vh)", "opacity": -1.5 / viewHeight * scrollTop + 1 });
+        $("#info-area").css("opacity", -2/viewHeight * scrollTop + 1);
+        $(".social-media").css({
+            "opacity": -2.5/viewHeight * scrollTop + 1,
+            "transform": "translateY(" + 70 / viewHeight * scrollTop + "vh"
+        });
+
+        //tranzitii header
+        if(scrollTop > 30/100*viewHeight){
+            $(".header").addClass("play");
+            $(".header").removeClass("play-reverse");
+            ok=true;
+        }
+        else{
+            $(".header").removeClass("play");
+            $(".hamburger").removeClass("is-active")
+            $(".main.side-menu").removeClass("active")
+            if(hamburgerClicked)
+                $(".main.side-menu").addClass("inactive")
+            if(ok)
+                $(".header").addClass("play-reverse");
+        }
+
+
+        //tranzitii elemente animate
+        $(".animated:not('.play')").each((index,element) => {
+            if(visible($(element)))
+                $(element).addClass("play");
+        });
+        $(".animated.play").each((index,element) => {
+            if(!visible($(element)))
+                $(element).removeClass("play");
+        });
+
+        //parallax
+        if(scrollTop+(viewHeight*2) > feather1Top){
+            if ((scrollTop - feather1Top) * 0.5 < 0){
+                $(".feather1").css({
+                    "top": "100px",
+                    "transform": "translate3d(0," + (scrollTop - feather1Top) * 0.5 + "px,0)",
+                    "background-position": "center " + -(scrollTop - feather1Top) * 0.5 + "px"
+                });
+            }
+            else{
+                $(".feather1").css({
+                    "transform": "translate3d(0, 0,0)",
+                    "top": (scrollTop - feather1Top) * 0.5 + 100 + "px",
+                    "background-position": "center 0px"
+                });
+            }
+        }
+        if(scrollTop+(viewHeight*2) > feather2Top){
+            if ((scrollTop - feather2Top) * 0.35 < 0){
+                $(".feather2").css({
+                    "top": "180px",
+                    "transform": "translate3d(0," + (scrollTop - feather2Top) * 0.35 + "px,0)",
+                    "background-position": "center " + -(scrollTop - feather2Top) * 0.35 + "px"
+                });
+            }
+            else{
+                $(".feather2").css({
+                    "transform": "translate3d(0, 0,0)",
+                    "top": (scrollTop - feather2Top) * 0.35 + 180 + "px",
+                    "background-position": "center 0px"
+                });
+            }
+        }
+        if(scrollTop+(viewHeight*2) > feather3Top){
+            if ((scrollTop - feather3Top) * 0.6 < 0){
+                $(".feather3").css({
+                    "top": "100px",
+                    "transform": "translate3d(0," + (scrollTop - feather3Top) * 0.6 + "px,0)",
+                    "background-position": "center " + -(scrollTop - feather3Top) * 0.6 + "px"
+                });
+            }
+            else{
+                $(".feather3").css({
+                    "transform": "translate3d(0, 0,0)",
+                    "top": (scrollTop - feather1Top) * 0.6 + 100 + "px",
+                    "background-position": "center 0px"
+                });
+            }
+        }
+        if(scrollTop+(viewHeight*2) > contactTop){
+            if ((scrollTop - contactTop) * 0.6 < 0){
+                $(".hand").css({
+                    "top": "0px",
+                    "transform": "translate3d(0," + (scrollTop - contactTop) * 0.6 + "px,0)",
+                    "background-position": "center " + -(scrollTop - contactTop) * 0.6 + "px"
+                });
+            }
+        }
+        if(scrollTop+(viewHeight*2) > contactTop){
+            if ((scrollTop - contactTop) * 0.35 < 0){
+                $(".pigeon").css({
+                    "top": "0px",
+                    "transform": "translate3d(0," + (scrollTop - contactTop) * 0.35 + "px,0)",
+                    "background-position": "center " + -(scrollTop - contactTop) * 0.35 + "px"
+                });
+            }
+        }
+
+        //tranzitii contact
+        $(".copyright").css({
+            "opacity": 1 + 2.5 / viewHeight * (scrollTop-contactTop),
+            "transform": "translateY(" + -70 / viewHeight * (scrollTop - contactTop) + "vh"
+            // "opacity": -2.5 / viewHeight * scrollTop + 1,
+            // "transform": "translateY(" + 70 / viewHeight * scrollTop + "vh"
+        });
+
+
+    });
+
+    // website background turns visible on hover
+    $(".website").hover(
+        function () {
+            $("#" + $(this).data("project") + " .title").addClass("play");
+            $("#" + $(this).data("project") + " .text").addClass("play");
+            $(".feather-wrapper").removeClass("visible");
+        },
+        function () {
+            $("#" + $(this).data("project") + " .title").removeClass("play");
+            $("#" + $(this).data("project") + " .text").removeClass("play");
+            $(".feather-wrapper").addClass("visible");
+        }
+    );
 
 }
