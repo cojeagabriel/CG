@@ -75,10 +75,11 @@ window.onload = function () {
     var contactTop = $("#contact-section").offset().top;
     var ok = false;
 
+    var viewHeight = $(window).height();
+
     $(window).scroll(function () {
 
         var scrollTop = $(window).scrollTop();
-        var viewHeight = $(window).height();
 
         // $("#projects-section .header").css("top", scrollTop - $("#projects-section").offset().top + "px");
         // $("#contact-section .header").css("top", scrollTop - $("#contact-section").offset().top + "px");

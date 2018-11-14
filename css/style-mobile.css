@@ -6,8 +6,6 @@
     height: 100px; }
     .header nav .logo a {
       padding-left: 20px; }
-      .header nav .logo a .logo-text {
-        font-size: 0.8em; }
     .header nav .main:not(.side-menu) {
       display: none; }
     .header .hamburger {
