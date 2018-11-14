@@ -81,6 +81,8 @@ window.onload = function () {
 
         var scrollTop = $(window).scrollTop();
 
+        $("#scroll-top").text(scrollTop)
+
         // $("#projects-section .header").css("top", scrollTop - $("#projects-section").offset().top + "px");
         // $("#contact-section .header").css("top", scrollTop - $("#contact-section").offset().top + "px");
 
@@ -88,11 +90,11 @@ window.onload = function () {
         //tranzitii hero
         var face = $("#face");
         face.css("transform", "translateX(" + 200/viewHeight*scrollTop + "%)");
-        $("#hero-text").css({ "transform": "translateY(" + 80 / viewHeight * scrollTop + "vh)", "opacity": -1.5 / viewHeight * scrollTop + 1 });
+        $("#hero-text").css({ "transform": "translateY(" + ((viewHeight/2)+280) / viewHeight * scrollTop + "px)", "opacity": -1.5 / viewHeight * scrollTop + 1 });
         $("#info-area").css("opacity", -2/viewHeight * scrollTop + 1);
         $(".social-media").css({
             "opacity": -2.5/viewHeight * scrollTop + 1,
-            "transform": "translateY(" + 70 / viewHeight * scrollTop + "vh"
+            "transform": "translateY(" + ((viewHeight / 2) + 400) / viewHeight * scrollTop + "px"
         });
 
         //tranzitii header
