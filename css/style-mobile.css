@@ -1,0 +1,83 @@
+@media screen and (min-width: 480px) {
+  .info-mobile {
+    display: none !important; } }
+@media screen and (max-width: 767px) {
+  .header {
+    height: 100px; }
+    .header nav .logo a {
+      padding-left: 20px; }
+      .header nav .logo a .logo-text {
+        font-size: 0.8em; }
+    .header nav .main:not(.side-menu) {
+      display: none; }
+    .header .hamburger {
+      width: 80px; }
+      .header .hamburger .hamburger-box {
+        width: 20px; }
+        .header .hamburger .hamburger-box .hamburger-inner,
+        .header .hamburger .hamburger-box .hamburger-inner:after,
+        .header .hamburger .hamburger-box .hamburger-inner:before {
+          width: 20px;
+          height: 3px;
+          border-radius: 0;
+          left: 0;
+          background-color: #f6f7f3; }
+        .header .hamburger .hamburger-box .hamburger-inner {
+          width: 16px; }
+        .header .hamburger .hamburger-box .hamburger-inner:after {
+          width: 16px;
+          left: 6px; }
+
+  #hero > div {
+    display: flex; }
+    #hero > div .hero-text {
+      width: 100%;
+      height: 100%;
+      justify-content: flex-end;
+      margin: 0 40px;
+      box-sizing: border-box;
+      padding-bottom: 30vh; }
+      #hero > div .hero-text .title {
+        font-size: 15vw; }
+      #hero > div .hero-text .text {
+        width: 80%; }
+      #hero > div .hero-text .actions {
+        justify-content: space-between; }
+        #hero > div .hero-text .actions a {
+          font-size: 11px; }
+        #hero > div .hero-text .actions .button {
+          white-space: nowrap;
+          padding: 14px 32px;
+          font-size: 11px; }
+    #hero > div .social-media {
+      display: none; }
+    #hero > div .info:not(.info-mobile) {
+      display: none; }
+    #hero > div #info-area {
+      grid-template-columns: 30% 70%; }
+      #hero > div #info-area .project {
+        width: 100%;
+        padding-bottom: 100%;
+        position: relative; }
+        #hero > div #info-area .project .swiper-container {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0; }
+      #hero > div #info-area .info-mobile .swiper-container {
+        margin: 0; }
+        #hero > div #info-area .info-mobile .swiper-container .swiper-slide {
+          display: flex;
+          align-items: center;
+          justify-content: center; }
+          #hero > div #info-area .info-mobile .swiper-container .swiper-slide .info-box {
+            max-width: 90%; }
+            #hero > div #info-area .info-mobile .swiper-container .swiper-slide .info-box h3 {
+              font-size: 16px; }
+            #hero > div #info-area .info-mobile .swiper-container .swiper-slide .info-box p {
+              font-size: 11px; }
+  #hero #face {
+    display: none; } }
+
+/*# sourceMappingURL=style-mobile.css.map */

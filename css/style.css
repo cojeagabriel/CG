@@ -199,7 +199,7 @@ section {
     grid-area: hamburger;
     display: flex;
     width: 120px;
-    height: 150px;
+    height: 100%;
     justify-content: center;
     align-items: center;
     align-self: end;
@@ -288,9 +288,9 @@ section {
     width: 100%;
     height: 67%;
     display: grid;
-    grid-template-columns: 10% 15% 25% 25% 25%;
+    grid-template-columns: 10% 15% 50% 25%;
     grid-template-rows: 1fr 20%;
-    grid-template-areas: "socialmedia . text text ." "socialmedia project info info info";
+    grid-template-areas: "socialmedia . text ." "socialmedia project info info";
     position: relative; }
   #hero #face {
     position: fixed;
@@ -313,10 +313,7 @@ section {
 .text-center {
   text-align: center; }
 
-.area-text {
-  grid-area: text; }
-
-.area-info {
+#info-area {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -325,12 +322,12 @@ section {
   grid-template-columns: 25% 75%;
   grid-template-rows: auto;
   grid-template-areas: 'project info'; }
-  .area-info > .project {
+  #info-area > .project {
     grid-area: project;
     justify-self: end;
     position: relative;
     overflow: hidden; }
-    .area-info > .project .swiper-container {
+    #info-area > .project .swiper-container {
       width: 180px;
       height: 180px;
       background-color: #f6f7f3;
@@ -340,12 +337,12 @@ section {
       animation-delay: 1s;
       animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
       animation-fill-mode: forwards; }
-      .area-info > .project .swiper-container .swiper-slide {
+      #info-area > .project .swiper-container .swiper-slide {
         width: 100%;
         height: 100%;
         box-sizing: border-box;
         padding: 10%; }
-        .area-info > .project .swiper-container .swiper-slide > img {
+        #info-area > .project .swiper-container .swiper-slide > img {
           object-fit: contain;
           width: 100%;
           height: 100%;
@@ -353,11 +350,11 @@ section {
           animation-delay: 1s;
           animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
           animation-fill-mode: forwards; }
-    .area-info > .project.play > .swiper-container {
+    #info-area > .project.play > .swiper-container {
       animation-name: slideInRight; }
-      .area-info > .project.play > .swiper-container img {
+      #info-area > .project.play > .swiper-container img {
         animation-name: slideInLeft; }
-    .area-info > .project .slide-to {
+    #info-area > .project .slide-to {
       position: absolute;
       top: 0;
       left: 0;
@@ -377,18 +374,18 @@ section {
       display: flex;
       align-items: center;
       justify-content: center; }
-      .area-info > .project .slide-to img {
+      #info-area > .project .slide-to img {
         width: 36px;
         height: auto;
         opacity: 0;
         transform: translateY(90px);
         transition: all 150ms ease; }
-    .area-info > .project:hover .slide-to {
+    #info-area > .project:hover .slide-to {
       opacity: 1; }
-      .area-info > .project:hover .slide-to img {
+      #info-area > .project:hover .slide-to img {
         opacity: 1;
         transform: translateY(0px); }
-  .area-info > .info {
+  #info-area > .info {
     grid-area: info;
     display: flex;
     width: 100%;
@@ -399,9 +396,9 @@ section {
     animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
     animation-fill-mode: forwards;
     visibility: hidden; }
-    .area-info > .info.play {
+    #info-area > .info.play {
       animation-name: fadeIn; }
-  .area-info .info-box {
+  #info-area .info-box {
     flex: 1 !important;
     display: flex;
     flex-direction: column;
@@ -409,10 +406,10 @@ section {
     align-items: center;
     box-sizing: border-box;
     padding: 3vw; }
-    .area-info .info-box p {
+    #info-area .info-box p {
       text-align: center;
       color: rgba(255, 255, 255, 0.5); }
-    .area-info .info-box h3 {
+    #info-area .info-box h3 {
       color: white;
       font-size: 1.2em;
       margin-bottom: 2vh;
@@ -493,7 +490,8 @@ section {
     animation-name: slideInUp; }
 
 .hero-text {
-  align-self: center; }
+  align-self: center;
+  grid-area: text; }
   .hero-text .text {
     display: inline !important; }
   .hero-text .title {

@@ -12,11 +12,6 @@ body{
 }
 
 html{
-    // background-image: url('../img/background8-optimized.jpg');
-    // background-size: cover;
-    // background-position: center 0px;
-    // background-repeat: no-repeat;
-    // background-attachment: fixed;
     &:before{
         content: "";
         background-image: url('../img/background8-optimized.jpg');
@@ -266,7 +261,7 @@ section{
         grid-area: hamburger;
         display: flex;
         width: 120px;
-        height: 150px;
+        height: 100%;
         justify-content: center;
         align-items: center;
         align-self: end;
@@ -424,11 +419,11 @@ section{
         width: 100%;
         height: 67%;
         display: grid;
-        grid-template-columns: 10% 15% 25% 25% 25%;
+        grid-template-columns: 10% 15% 50% 25%;
         grid-template-rows: 1fr 20%;
         grid-template-areas: 
-        "socialmedia . text text ."
-        "socialmedia project info info info";
+        "socialmedia . text ."
+        "socialmedia project info info";
         position: relative;
     }
 
@@ -462,11 +457,7 @@ section{
     text-align: center;
 }
 
-.area-text{
-    grid-area: text;
-}
-
-.area-info{
+#info-area{
     position: fixed;
     bottom: 0;
     left: 0;
@@ -479,8 +470,6 @@ section{
 
     >.project{
         grid-area: project;
-        // width: 180px;
-        // padding-bottom: 180px;
         justify-self: end;
         position: relative;
         overflow: hidden;
@@ -701,6 +690,7 @@ section{
 
 .hero-text{
     align-self: center;
+    grid-area: text;
 
     .text{
         // white-space: nowrap;
