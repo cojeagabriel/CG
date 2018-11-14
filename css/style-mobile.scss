@@ -1,4 +1,5 @@
 @import 'variables.scss';
+@import 'animations.scss';
 
 @media screen and (min-width: $screen-xs){
     .info-mobile{
@@ -27,6 +28,7 @@
 
         .hamburger{
             width: 80px;
+            animation-name: hamburgerAnimation, fadeIn;
             .hamburger-box{
                 width: 20px;
                 .hamburger-inner,

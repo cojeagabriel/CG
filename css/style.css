@@ -1,3 +1,68 @@
+@keyframes slideInLeft {
+  0% {
+    visibility: visible;
+    transform: translate3d(-100%, 0, 0); }
+  100% {
+    visibility: visible;
+    transform: translate3d(0, 0, 0); } }
+@keyframes slideOutLeft {
+  0% {
+    visibility: visible;
+    transform: translate3d(0, 0, 0); }
+  100% {
+    visibility: visible;
+    transform: translate3d(-100%, 0, 0); } }
+@keyframes slideInRight {
+  0% {
+    visibility: visible;
+    transform: translate3d(100%, 0, 0); }
+  100% {
+    visibility: visible;
+    transform: translate3d(0, 0, 0); } }
+@keyframes hamburgerAnimation {
+  0% {
+    visibility: visible;
+    transform: translate3d(-30px, 0, 0); }
+  100% {
+    visibility: visible;
+    transform: translate3d(0, 0, 0); } }
+@keyframes hamburgerAnimationReverse {
+  0% {
+    visibility: visible;
+    transform: translate3d(0, 0, 0); }
+  100% {
+    visibility: visible;
+    transform: translate3d(-30px, 0, 0); } }
+@keyframes slideOutRight {
+  0% {
+    visibility: visible;
+    transform: translate3d(0, 0, 0); }
+  100% {
+    visibility: visible;
+    transform: translate3d(100%, 0, 0); } }
+@keyframes slideInUp {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    transform: translateY(100%); }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0%); } }
+@keyframes fadeIn {
+  0% {
+    visibility: visible;
+    opacity: 0; }
+  100% {
+    visibility: visible;
+    opacity: 1; } }
+@keyframes fadeOut {
+  0% {
+    visibility: visible;
+    opacity: 1; }
+  100% {
+    visibility: visible;
+    opacity: 0; } }
 * {
   font-family: "Proxima Nova", Georgia, sans-serif; }
 
@@ -247,7 +312,8 @@ section {
         animation-delay: 90ms;
         animation-duration: 3000ms; }
   .header.play .hamburger {
-    animation-name: hamburgerAnimation, fadeIn; }
+    visibility: visible;
+    opacity: 1; }
   .header.play-reverse .main:not(.side-menu) {
     opacity: 0;
     animation-delay: 0.2s;
@@ -512,71 +578,6 @@ section {
   .hero-text .actions.play {
     animation-name: slideInUp; }
 
-@keyframes slideInLeft {
-  0% {
-    visibility: visible;
-    transform: translate3d(-100%, 0, 0); }
-  100% {
-    visibility: visible;
-    transform: translate3d(0, 0, 0); } }
-@keyframes slideOutLeft {
-  0% {
-    visibility: visible;
-    transform: translate3d(0, 0, 0); }
-  100% {
-    visibility: visible;
-    transform: translate3d(-100%, 0, 0); } }
-@keyframes slideInRight {
-  0% {
-    visibility: visible;
-    transform: translate3d(100%, 0, 0); }
-  100% {
-    visibility: visible;
-    transform: translate3d(0, 0, 0); } }
-@keyframes hamburgerAnimation {
-  0% {
-    visibility: visible;
-    transform: translate3d(-30px, 0, 0); }
-  100% {
-    visibility: visible;
-    transform: translate3d(0, 0, 0); } }
-@keyframes hamburgerAnimationReverse {
-  0% {
-    visibility: visible;
-    transform: translate3d(0, 0, 0); }
-  100% {
-    visibility: visible;
-    transform: translate3d(-30px, 0, 0); } }
-@keyframes slideOutRight {
-  0% {
-    visibility: visible;
-    transform: translate3d(0, 0, 0); }
-  100% {
-    visibility: visible;
-    transform: translate3d(100%, 0, 0); } }
-@keyframes slideInUp {
-  0% {
-    visibility: visible;
-    opacity: 0;
-    transform: translateY(100%); }
-  100% {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0%); } }
-@keyframes fadeIn {
-  0% {
-    visibility: visible;
-    opacity: 0; }
-  100% {
-    visibility: visible;
-    opacity: 1; } }
-@keyframes fadeOut {
-  0% {
-    visibility: visible;
-    opacity: 1; }
-  100% {
-    visibility: visible;
-    opacity: 0; } }
 .text-light {
   color: #f6f7f3; }
 

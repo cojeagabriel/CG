@@ -113,7 +113,8 @@ window.onload = function () {
         }
         else{
             // face.css("transform", "translateX(" + 200 / viewHeight * scrollTop + "%)");
-            $("#hero-text").css({ "transform": "translateY(" + 100 / viewHeight * 5 * scrollTop + "px)", "opacity": -2 / viewHeight * scrollTop + 1 });
+            // $("#hero-text").css({ "transform": "translateY(" + 100 / viewHeight * 5 * scrollTop + "px)", "opacity": -2 / viewHeight * scrollTop + 1 });
+            $("#hero-text").css("opacity", -4 / viewHeight * scrollTop + 1);
             $("#info-area").css("opacity", -2 / viewHeight * scrollTop + 1);
             // $(".social-media").css({
             //     "opacity": -2.5 / viewHeight * scrollTop + 1,
