@@ -8,7 +8,7 @@ body {
   height: 100%; }
 
 html {
-  background-image: url("../img/background8.png");
+  background-image: url("../img/background8-optimized.jpg");
   background-size: cover;
   background-position: center 0px;
   background-repeat: no-repeat;
@@ -789,11 +789,6 @@ section {
   position: relative;
   padding: 22vh 0 22vh;
   overflow: hidden; }
-  #contact-section .header {
-    position: absolute;
-    top: 0; }
-    #contact-section .header .logo svg {
-      fill: #1d213f; }
   #contact-section .content {
     margin-left: 25%; }
     #contact-section .content .title-wrapper {
@@ -930,7 +925,7 @@ section {
     flex-grow: 1; }
 
 .background {
-  background-image: url("../img/background8.png");
+  background-image: url("../img/background8-optimized.jpg");
   background-position: center 0px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -943,8 +938,6 @@ section {
   display: flex;
   align-items: center;
   flex-direction: column; }
-  #skills-section .container {
-    width: 50%; }
   #skills-section .title {
     margin-bottom: 120px; }
   #skills-section .line {
@@ -966,9 +959,15 @@ section {
     border-top-color: #f6f7f3; }
   #skills-section .line span, #skills-section .line:after, #skills-section .line:before {
     border-color: #f6f7f3; }
-  #skills-section .skill {
+  #skills-section .container {
+    width: 50%; }
+  #skills-section .skill-inner {
     display: flex;
     align-items: center;
+    justify-content: center; }
+  #skills-section .skill {
+    display: flex;
+    justify-content: center;
     margin-bottom: 45px;
     animation-duration: 1200ms;
     animation-delay: 0.2s;

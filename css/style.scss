@@ -12,7 +12,7 @@ body{
 }
 
 html{
-    background-image: url('../img/background8.png');
+    background-image: url('../img/background8-optimized.jpg');
     background-size: cover;
     background-position: center 0px;
     background-repeat: no-repeat;
@@ -1155,15 +1155,15 @@ section{
     padding: 22vh 0 22vh;
     overflow: hidden;
 
-    .header{
-        position: absolute;
-        top: 0;
-        .logo{
-            svg{
-                fill: $dark-blue;
-            }
-        }
-    }
+    // .header{
+    //     position: absolute;
+    //     top: 0;
+    //     .logo{
+    //         svg{
+    //             fill: $dark-blue;
+    //         }
+    //     }
+    // }
 
     .content{
         margin-left: 25%;
@@ -1358,7 +1358,7 @@ section{
 }
 
 .background{
-    background-image: url('../img/background8.png');
+    background-image: url('../img/background8-optimized.jpg');
     background-position: center 0px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1372,10 +1372,6 @@ section{
     display: flex;
     align-items: center;
     flex-direction: column;
-
-    .container{
-        width: 50%;
-    }
 
     .title{
         margin-bottom: 120px;
@@ -1415,9 +1411,20 @@ section{
         }
     }
 
-    .skill{
+    .container{
+        width: 50%;
+    }
+
+    .skill-inner{
         display: flex;
         align-items: center;
+        justify-content: center;
+    }
+
+    .skill{
+        display: flex;
+        // align-items: center;
+        justify-content: center;
         margin-bottom: 45px;
         animation-duration: 1200ms;
         animation-delay: 0.2s;
