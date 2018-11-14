@@ -8,6 +8,15 @@
 }
 
 @media screen and (max-width: $screen-xs-max){
+
+    .title{
+        font-size: 15vw;
+    }
+
+    .text{
+        width: 80% !important;
+    }
+
     .header{
         height: 100px;
 
@@ -57,13 +66,14 @@
     }
 
     #hero{
-
+        height: 120%;
         >div{
             // grid-template-columns: 20px 60% auto 20px;
             // grid-template-rows: 1fr 20%;
             // grid-template-areas: 
             //     ". text . ."
             //     "project info info info";
+            height: 84%;
             display: flex;
 
             .hero-text{
@@ -73,12 +83,6 @@
                 margin: 0 40px;
                 box-sizing: border-box;
                 padding-bottom: 30vh;
-                .title{
-                    font-size: 15vw;
-                }
-                .text{
-                    width: 80%;
-                }
                 .actions{
                     justify-content: space-between;
                     a{
@@ -139,6 +143,62 @@
 
         #face{
             display: none;
+        }
+    }
+
+    #projects-section{
+        padding: 12vh 0px;
+        .projects-header{
+            height: 200px;
+            .title-wrapper{
+                margin-bottom: 10px;
+            }
+            .text{
+                max-width: 80%;
+            }
+        }
+
+        .feather-wrapper{
+            display: none;
+        }
+
+        .filters{
+            li{
+                padding: 0 25px;
+            }
+        }
+        .project{
+            margin-bottom: 15px;
+        }
+    }
+    
+    #skills-section{
+        padding: 12vh 0px;
+
+        .title{
+            margin-bottom: 0;
+        }
+        .title-wrapper{
+            margin-bottom: 12vh;
+        }
+        .container{
+            width: 100%;
+            padding: 0 25px;
+        }
+
+        .skill{
+            .skill-icon{
+                width: 36px;
+                height: 36px;
+                margin-right: 15px;
+            }
+
+            .skill-score{
+                .circle{
+                    width: 10px;
+                    height: 10px;
+                }
+            }
         }
     }
 }

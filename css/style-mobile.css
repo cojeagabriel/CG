@@ -67,6 +67,12 @@
   .info-mobile {
     display: none !important; } }
 @media screen and (max-width: 767px) {
+  .title {
+    font-size: 15vw; }
+
+  .text {
+    width: 80% !important; }
+
   .header {
     height: 100px; }
     .header nav .logo a {
@@ -92,56 +98,87 @@
           width: 16px;
           left: 6px; }
 
-  #hero > div {
-    display: flex; }
-    #hero > div .hero-text {
-      width: 100%;
-      height: 100%;
-      justify-content: flex-end;
-      margin: 0 40px;
-      box-sizing: border-box;
-      padding-bottom: 30vh; }
-      #hero > div .hero-text .title {
-        font-size: 15vw; }
-      #hero > div .hero-text .text {
-        width: 80%; }
-      #hero > div .hero-text .actions {
-        justify-content: space-between; }
-        #hero > div .hero-text .actions a {
-          font-size: 11px; }
-        #hero > div .hero-text .actions .button {
-          white-space: nowrap;
-          padding: 14px 32px;
-          font-size: 11px; }
-    #hero > div .social-media {
-      display: none; }
-    #hero > div .info:not(.info-mobile) {
-      display: none; }
-    #hero > div #info-area {
-      grid-template-columns: 30% 70%; }
-      #hero > div #info-area .project {
+  #hero {
+    height: 120%; }
+    #hero > div {
+      height: 84%;
+      display: flex; }
+      #hero > div .hero-text {
         width: 100%;
-        padding-bottom: 100%;
-        position: relative; }
-        #hero > div #info-area .project .swiper-container {
+        height: 100%;
+        justify-content: flex-end;
+        margin: 0 40px;
+        box-sizing: border-box;
+        padding-bottom: 30vh; }
+        #hero > div .hero-text .actions {
+          justify-content: space-between; }
+          #hero > div .hero-text .actions a {
+            font-size: 11px; }
+          #hero > div .hero-text .actions .button {
+            white-space: nowrap;
+            padding: 14px 32px;
+            font-size: 11px; }
+      #hero > div .social-media {
+        display: none; }
+      #hero > div .info:not(.info-mobile) {
+        display: none; }
+      #hero > div #info-area {
+        grid-template-columns: 30% 70%; }
+        #hero > div #info-area .project {
           width: 100%;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          left: 0; }
-      #hero > div #info-area .info-mobile .swiper-container {
-        margin: 0; }
-        #hero > div #info-area .info-mobile .swiper-container .swiper-slide {
-          display: flex;
-          align-items: center;
-          justify-content: center; }
-          #hero > div #info-area .info-mobile .swiper-container .swiper-slide .info-box {
-            max-width: 90%; }
-            #hero > div #info-area .info-mobile .swiper-container .swiper-slide .info-box h3 {
-              font-size: 16px; }
-            #hero > div #info-area .info-mobile .swiper-container .swiper-slide .info-box p {
-              font-size: 11px; }
-  #hero #face {
-    display: none; } }
+          padding-bottom: 100%;
+          position: relative; }
+          #hero > div #info-area .project .swiper-container {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0; }
+        #hero > div #info-area .info-mobile .swiper-container {
+          margin: 0; }
+          #hero > div #info-area .info-mobile .swiper-container .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            #hero > div #info-area .info-mobile .swiper-container .swiper-slide .info-box {
+              max-width: 90%; }
+              #hero > div #info-area .info-mobile .swiper-container .swiper-slide .info-box h3 {
+                font-size: 16px; }
+              #hero > div #info-area .info-mobile .swiper-container .swiper-slide .info-box p {
+                font-size: 11px; }
+    #hero #face {
+      display: none; }
+
+  #projects-section {
+    padding: 12vh 0px; }
+    #projects-section .projects-header {
+      height: 200px; }
+      #projects-section .projects-header .title-wrapper {
+        margin-bottom: 10px; }
+      #projects-section .projects-header .text {
+        max-width: 80%; }
+    #projects-section .feather-wrapper {
+      display: none; }
+    #projects-section .filters li {
+      padding: 0 25px; }
+    #projects-section .project {
+      margin-bottom: 15px; }
+
+  #skills-section {
+    padding: 12vh 0px; }
+    #skills-section .title {
+      margin-bottom: 0; }
+    #skills-section .title-wrapper {
+      margin-bottom: 12vh; }
+    #skills-section .container {
+      width: 100%;
+      padding: 0 25px; }
+    #skills-section .skill .skill-icon {
+      width: 36px;
+      height: 36px;
+      margin-right: 15px; }
+    #skills-section .skill .skill-score .circle {
+      width: 10px;
+      height: 10px; } }
 
 /*# sourceMappingURL=style-mobile.css.map */
