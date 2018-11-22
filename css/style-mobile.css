@@ -79,13 +79,18 @@
     width: 80% !important; }
 
   .header {
-    height: 100px; }
-    .header:not(.dark) {
+    height: 100px;
+    clip: rect(0, auto, auto, 0); }
+    .header:not(.dark):before {
+      content: "";
       background-image: url("../img/background8-optimized.jpg");
       background-size: cover;
       background-position: center 0px;
       background-repeat: no-repeat;
-      background-attachment: fixed; }
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      z-index: -10; }
     .header.dark {
       background-color: #f6f7f3; }
     .header nav .logo a {
