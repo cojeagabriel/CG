@@ -63,6 +63,11 @@
   100% {
     visibility: visible;
     opacity: 0; } }
+@keyframes hideMenu {
+  0% {
+    visibility: visible; }
+  100% {
+    visibility: hidden; } }
 @media screen and (min-width: 480px) {
   .info-mobile {
     display: none !important; } }
@@ -75,10 +80,28 @@
 
   .header {
     height: 100px; }
+    .header:not(.dark) {
+      background-image: url("../img/background8-optimized.jpg");
+      background-size: cover;
+      background-position: center 0px;
+      background-repeat: no-repeat;
+      background-attachment: fixed; }
+    .header.dark {
+      background-color: #f6f7f3; }
     .header nav .logo a {
       padding-left: 20px; }
     .header nav .main:not(.side-menu) {
       display: none; }
+    .header nav .main.side-menu {
+      width: 100%;
+      background-color: #f6f7f3; }
+      .header nav .main.side-menu li a {
+        font-size: 1em;
+        color: #1d213f !important; }
+        .header nav .main.side-menu li a.active {
+          color: #18ebf0 !important; }
+        .header nav .main.side-menu li a:active {
+          color: #18ebf0 !important; }
     .header .hamburger {
       width: 80px;
       animation-name: hamburgerAnimation, fadeIn; }
@@ -106,10 +129,10 @@
       #hero > div .hero-text {
         width: 100%;
         height: 100%;
-        justify-content: flex-end;
+        justify-content: center;
         margin: 0 40px;
         box-sizing: border-box;
-        padding-bottom: 30vh; }
+        padding-bottom: 10vh; }
         #hero > div .hero-text .actions {
           justify-content: space-between; }
           #hero > div .hero-text .actions a {
@@ -150,7 +173,7 @@
       display: none; }
 
   #projects-section {
-    padding: 12vh 0px; }
+    padding: 15vh 0px; }
     #projects-section .projects-header {
       height: 200px; }
       #projects-section .projects-header .title-wrapper {
@@ -165,7 +188,7 @@
       margin-bottom: 15px; }
 
   #skills-section {
-    padding: 12vh 0px; }
+    padding: 15vh 0px; }
     #skills-section .title {
       margin-bottom: 0; }
     #skills-section .title-wrapper {
@@ -179,6 +202,18 @@
       margin-right: 15px; }
     #skills-section .skill .skill-score .circle {
       width: 10px;
-      height: 10px; } }
+      height: 10px; }
+
+  #contact-section {
+    padding: 20vh 0px; }
+    #contact-section .title {
+      margin-bottom: 0; }
+    #contact-section .hand-wrapper,
+    #contact-section .pigeon-wrapper {
+      display: none; }
+    #contact-section .content {
+      margin: 0 40px; }
+    #contact-section .copytight {
+      display: none; } }
 
 /*# sourceMappingURL=style-mobile.css.map */

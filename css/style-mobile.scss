@@ -17,8 +17,23 @@
         width: 80% !important;
     }
 
+    .header-container{
+    }
+
     .header{
         height: 100px;
+
+        &:not(.dark){
+            background-image: url('../img/background8-optimized.jpg');
+            background-size: cover;
+            background-position: center 0px;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        &.dark{
+            background-color: $white;
+        }
 
         nav{
             .logo{
@@ -32,6 +47,28 @@
 
             .main:not(.side-menu){
                 display: none;
+            }
+
+            .main{
+                &.side-menu{
+                    width: 100%;
+                    background-color: $white;
+                    li{
+                        a{
+                            font-size: 1em;
+                            color: rgba($color: $dark-blue, $alpha: 1) !important;
+                            // &:hover{
+                            //     color: rgba($color: $dark-blue, $alpha: 1);
+                            // }
+                            &.active{
+                                color: rgba($color: $light-blue, $alpha: 1) !important;
+                            }
+                            &:active{
+                                color: rgba($color: $light-blue, $alpha: 1) !important;
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -79,10 +116,10 @@
             .hero-text{
                 width: 100%;
                 height: 100%;
-                justify-content: flex-end;
+                justify-content: center;
                 margin: 0 40px;
                 box-sizing: border-box;
-                padding-bottom: 30vh;
+                padding-bottom: 10vh;
                 .actions{
                     justify-content: space-between;
                     a{
@@ -147,7 +184,7 @@
     }
 
     #projects-section{
-        padding: 12vh 0px;
+        padding: 15vh 0px;
         .projects-header{
             height: 200px;
             .title-wrapper{
@@ -173,7 +210,7 @@
     }
     
     #skills-section{
-        padding: 12vh 0px;
+        padding: 15vh 0px;
 
         .title{
             margin-bottom: 0;
@@ -199,6 +236,32 @@
                     height: 10px;
                 }
             }
+        }
+    }
+
+    #contact-section{
+        padding: 20vh 0px;
+
+        .title{
+            margin-bottom: 0;
+        }
+
+        .hand-wrapper{
+            // width: 80%;
+            // left: 10%;
+        }
+
+        .hand-wrapper,
+        .pigeon-wrapper{
+            display: none;
+        }
+
+        .content{
+            margin: 0 40px;
+        }
+
+        .copytight{
+            display: none;
         }
     }
 }

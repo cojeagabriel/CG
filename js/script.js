@@ -59,12 +59,18 @@ window.onload = function () {
             $(".main.side-menu").removeClass("inactive")
             $(".main.side-menu").addClass("active")
             $(".hamburger").addClass("is-active")
+            if (viewWidth <= 480) {
+                $(".header:not('.dark')").addClass("dark-side-menu");
+            }
             hamburgerClicked = true;
         }
         else{
             $(".main.side-menu").removeClass("active")
             $(".main.side-menu").addClass("inactive")
             $(".hamburger").removeClass("is-active")
+            if (viewWidth <= 480) {
+                $(".header.dark-side-menu").removeClass("dark-side-menu");
+            }
             hamburgerClicked = false;
         }
     })
@@ -77,16 +83,15 @@ window.onload = function () {
 
     var face = $("#face");
     var viewHeight = $(window).height();
+    var viewWidth = $(window).width();
 
     $(window).scroll(function () {
 
         var scrollTop = $(window).scrollTop();
 
-        $("#scroll-top").text(scrollTop)
-
         //tranzitii hero
         
-        if($(window).width > 480){
+        if(viewWidth > 480){
             face.css("transform", "translateX(" + 200 / viewHeight * scrollTop + "%)");
             $("#hero-text").css({ "transform": "translateY(" + ((viewHeight / 2) + 280) / viewHeight * scrollTop + "px)", "opacity": -1.5 / viewHeight * scrollTop + 1 });
             $("#info-area").css("opacity", -2 / viewHeight * scrollTop + 1);
@@ -94,6 +99,80 @@ window.onload = function () {
                 "opacity": -2.5 / viewHeight * scrollTop + 1,
                 "transform": "translateY(" + ((viewHeight / 2) + 400) / viewHeight * scrollTop + "px"
             });
+
+            //tranzitii contact
+            $(".copyright").css({
+                "opacity": 1 + 2.5 / viewHeight * (scrollTop - contactTop),
+                "transform": "translateY(" + -70 / viewHeight * (scrollTop - contactTop) + "vh"
+            });
+
+            //parallax
+            if (scrollTop + (viewHeight * 2) > feather1Top) {
+                if ((scrollTop - feather1Top) * 0.5 < 0) {
+                    $(".feather1").css({
+                        "top": "100px",
+                        "transform": "translate3d(0," + (scrollTop - feather1Top) * 0.5 + "px,0)",
+                        "background-position": "center " + -(scrollTop - feather1Top) * 0.5 + "px"
+                    });
+                }
+                else {
+                    $(".feather1").css({
+                        "transform": "translate3d(0, 0,0)",
+                        "top": (scrollTop - feather1Top) * 0.5 + 100 + "px",
+                        "background-position": "center 0px"
+                    });
+                }
+            }
+            if (scrollTop + (viewHeight * 2) > feather2Top) {
+                if ((scrollTop - feather2Top) * 0.35 < 0) {
+                    $(".feather2").css({
+                        "top": "180px",
+                        "transform": "translate3d(0," + (scrollTop - feather2Top) * 0.35 + "px,0)",
+                        "background-position": "center " + -(scrollTop - feather2Top) * 0.35 + "px"
+                    });
+                }
+                else {
+                    $(".feather2").css({
+                        "transform": "translate3d(0, 0,0)",
+                        "top": (scrollTop - feather2Top) * 0.35 + 180 + "px",
+                        "background-position": "center 0px"
+                    });
+                }
+            }
+            if (scrollTop + (viewHeight * 2) > feather3Top) {
+                if ((scrollTop - feather3Top) * 0.6 < 0) {
+                    $(".feather3").css({
+                        "top": "100px",
+                        "transform": "translate3d(0," + (scrollTop - feather3Top) * 0.6 + "px,0)",
+                        "background-position": "center " + -(scrollTop - feather3Top) * 0.6 + "px"
+                    });
+                }
+                else {
+                    $(".feather3").css({
+                        "transform": "translate3d(0, 0,0)",
+                        "top": (scrollTop - feather1Top) * 0.6 + 100 + "px",
+                        "background-position": "center 0px"
+                    });
+                }
+            }
+            if (scrollTop + (viewHeight * 2) > contactTop) {
+                if ((scrollTop - contactTop) * 0.6 < 0) {
+                    $(".hand").css({
+                        "top": "0px",
+                        "transform": "translate3d(0," + (scrollTop - contactTop) * 0.6 + "px,0)",
+                        "background-position": "center " + -(scrollTop - contactTop) * 0.6 + "px"
+                    });
+                }
+            }
+            if (scrollTop + (viewHeight * 2) > contactTop) {
+                if ((scrollTop - contactTop) * 0.35 < 0) {
+                    $(".pigeon").css({
+                        "top": "0px",
+                        "transform": "translate3d(0," + (scrollTop - contactTop) * 0.35 + "px,0)",
+                        "background-position": "center " + -(scrollTop - contactTop) * 0.35 + "px"
+                    });
+                }
+            }
 
             //tranzitii header
             if (scrollTop > 30 / 100 * viewHeight) {
@@ -112,14 +191,15 @@ window.onload = function () {
             }
         }
         else{
-            // face.css("transform", "translateX(" + 200 / viewHeight * scrollTop + "%)");
-            // $("#hero-text").css({ "transform": "translateY(" + 100 / viewHeight * 5 * scrollTop + "px)", "opacity": -2 / viewHeight * scrollTop + 1 });
             $("#hero-text").css("opacity", -5 / viewHeight * scrollTop + 1);
             $("#info-area").css("opacity", -3 / viewHeight * scrollTop + 1);
-            // $(".social-media").css({
-            //     "opacity": -2.5 / viewHeight * scrollTop + 1,
-            //     "transform": "translateY(" + ((viewHeight / 2) + 400) / viewHeight * scrollTop + "px"
-            // });
+
+            if (scrollTop > 30 / 100 * viewHeight) {
+                $(".header").addClass("small");
+            }
+            else {
+                $(".header").removeClass("small");
+            }
         }
 
 
@@ -132,81 +212,6 @@ window.onload = function () {
             if(!visible($(element)))
                 $(element).removeClass("play");
         });
-
-        //parallax
-        if(scrollTop+(viewHeight*2) > feather1Top){
-            if ((scrollTop - feather1Top) * 0.5 < 0){
-                $(".feather1").css({
-                    "top": "100px",
-                    "transform": "translate3d(0," + (scrollTop - feather1Top) * 0.5 + "px,0)",
-                    "background-position": "center " + -(scrollTop - feather1Top) * 0.5 + "px"
-                });
-            }
-            else{
-                $(".feather1").css({
-                    "transform": "translate3d(0, 0,0)",
-                    "top": (scrollTop - feather1Top) * 0.5 + 100 + "px",
-                    "background-position": "center 0px"
-                });
-            }
-        }
-        if(scrollTop+(viewHeight*2) > feather2Top){
-            if ((scrollTop - feather2Top) * 0.35 < 0){
-                $(".feather2").css({
-                    "top": "180px",
-                    "transform": "translate3d(0," + (scrollTop - feather2Top) * 0.35 + "px,0)",
-                    "background-position": "center " + -(scrollTop - feather2Top) * 0.35 + "px"
-                });
-            }
-            else{
-                $(".feather2").css({
-                    "transform": "translate3d(0, 0,0)",
-                    "top": (scrollTop - feather2Top) * 0.35 + 180 + "px",
-                    "background-position": "center 0px"
-                });
-            }
-        }
-        if(scrollTop+(viewHeight*2) > feather3Top){
-            if ((scrollTop - feather3Top) * 0.6 < 0){
-                $(".feather3").css({
-                    "top": "100px",
-                    "transform": "translate3d(0," + (scrollTop - feather3Top) * 0.6 + "px,0)",
-                    "background-position": "center " + -(scrollTop - feather3Top) * 0.6 + "px"
-                });
-            }
-            else{
-                $(".feather3").css({
-                    "transform": "translate3d(0, 0,0)",
-                    "top": (scrollTop - feather1Top) * 0.6 + 100 + "px",
-                    "background-position": "center 0px"
-                });
-            }
-        }
-        if(scrollTop+(viewHeight*2) > contactTop){
-            if ((scrollTop - contactTop) * 0.6 < 0){
-                $(".hand").css({
-                    "top": "0px",
-                    "transform": "translate3d(0," + (scrollTop - contactTop) * 0.6 + "px,0)",
-                    "background-position": "center " + -(scrollTop - contactTop) * 0.6 + "px"
-                });
-            }
-        }
-        if(scrollTop+(viewHeight*2) > contactTop){
-            if ((scrollTop - contactTop) * 0.35 < 0){
-                $(".pigeon").css({
-                    "top": "0px",
-                    "transform": "translate3d(0," + (scrollTop - contactTop) * 0.35 + "px,0)",
-                    "background-position": "center " + -(scrollTop - contactTop) * 0.35 + "px"
-                });
-            }
-        }
-
-        //tranzitii contact
-        $(".copyright").css({
-            "opacity": 1 + 2.5 / viewHeight * (scrollTop-contactTop),
-            "transform": "translateY(" + -70 / viewHeight * (scrollTop - contactTop) + "vh"
-        });
-
 
     });
 

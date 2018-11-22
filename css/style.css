@@ -63,6 +63,11 @@
   100% {
     visibility: visible;
     opacity: 0; } }
+@keyframes hideMenu {
+  0% {
+    visibility: visible; }
+  100% {
+    visibility: hidden; } }
 * {
   font-family: "Proxima Nova", Georgia, sans-serif; }
 
@@ -163,14 +168,21 @@ section {
   display: grid;
   grid-template-columns: auto 25%;
   grid-template-rows: 100%;
-  grid-template-areas: "nav hamburger"; }
+  grid-template-areas: "nav hamburger";
+  transition: height 300ms ease; }
+  .header.small {
+    height: 70px; }
+    .header.small .logo .logo-text {
+      padding-top: 10px; }
   .header nav {
     height: 100%;
     width: 100%;
     grid-area: nav;
     display: flex; }
     .header nav .logo {
-      height: 100%; }
+      height: 100%;
+      position: relative;
+      z-index: 11; }
       .header nav .logo a {
         display: flex;
         align-items: center;
@@ -183,6 +195,7 @@ section {
           width: auto;
           object-fit: contain; }
         .header nav .logo a svg {
+          transition: height 300ms ease;
           height: 50%;
           fill: white; }
       .header nav .logo .logo-text {
@@ -191,7 +204,8 @@ section {
         box-sizing: border-box; }
         .header nav .logo .logo-text > span {
           font-family: 'Gotham';
-          font-weight: bold; }
+          font-weight: bold;
+          transition: font-size 300ms ease; }
           .header nav .logo .logo-text > span:first-child {
             color: #8deb00; }
     .header nav .main {
@@ -239,8 +253,13 @@ section {
             .header nav .main.side-menu li a:hover {
               color: white; }
         .header nav .main.side-menu.active {
-          display: flex; }
+          opacity: 0;
+          animation-duration: 300ms;
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation-fill-mode: forwards;
+          animation-name: fadeIn; }
           .header nav .main.side-menu.active li {
+            opacity: 0;
             animation-duration: 300ms;
             animation-name: slideInRight, fadeIn; }
             .header nav .main.side-menu.active li:nth-child(2) {
@@ -250,7 +269,10 @@ section {
             .header nav .main.side-menu.active li:nth-child(4) {
               animation-delay: 0.3s; }
         .header nav .main.side-menu.inactive {
-          visibility: visible; }
+          animation-duration: 1200ms;
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation-fill-mode: forwards;
+          animation-name: fadeOut, hideMenu; }
           .header nav .main.side-menu.inactive li {
             animation-duration: 600ms;
             animation-name: slideOutRight, fadeOut; }
@@ -330,17 +352,19 @@ section {
         animation-duration: 300ms; }
   .header.play-reverse .hamburger {
     animation-name: hamburgerAnimationReverse, fadeOut; }
-  .header.dark .logo svg {
+  .header.dark .logo svg, .header.dark-side-menu .logo svg {
     fill: #1d213f; }
-  .header.dark .logo .logo-text span:last-child {
+  .header.dark .logo .logo-text span:last-child, .header.dark-side-menu .logo .logo-text span:last-child {
     color: #1d213f; }
-  .header.dark nav .main.side-menu li a {
+  .header.dark nav .main.side-menu li a, .header.dark-side-menu nav .main.side-menu li a {
     color: rgba(29, 33, 63, 0.5); }
-    .header.dark nav .main.side-menu li a:hover {
+    .header.dark nav .main.side-menu li a:hover, .header.dark-side-menu nav .main.side-menu li a:hover {
       color: #1d213f; }
   .header.dark .hamburger .hamburger-box .hamburger-inner,
   .header.dark .hamburger .hamburger-box .hamburger-inner:after,
-  .header.dark .hamburger .hamburger-box .hamburger-inner:before {
+  .header.dark .hamburger .hamburger-box .hamburger-inner:before, .header.dark-side-menu .hamburger .hamburger-box .hamburger-inner,
+  .header.dark-side-menu .hamburger .hamburger-box .hamburger-inner:after,
+  .header.dark-side-menu .hamburger .hamburger-box .hamburger-inner:before {
     background-color: #1d213f; }
 
 .section {

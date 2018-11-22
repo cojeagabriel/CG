@@ -97,3 +97,12 @@
     opacity: 0;
   }
 }
+
+@keyframes hideMenu {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}

@@ -63,5 +63,10 @@
   100% {
     visibility: visible;
     opacity: 0; } }
+@keyframes hideMenu {
+  0% {
+    visibility: visible; }
+  100% {
+    visibility: hidden; } }
 
 /*# sourceMappingURL=animations.css.map */
