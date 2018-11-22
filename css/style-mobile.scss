@@ -17,26 +17,23 @@
         width: 80% !important;
     }
 
-    .header-container{
-    }
-
     .header{
         height: 100px;
-        clip: rect(0,auto,auto,0);
+
+        .header-background{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            clip: rect(0,auto,auto,0);
+        }
 
         &:not(.dark){
-            // background-image: url('../img/background8-optimized.jpg');
-            // background-size: cover;
-            // background-position: center 0px;
-            // background-repeat: no-repeat;
-            // background-attachment: fixed;
-            &:before{
+            .header-background:before{
                 content: "";
                 background-image: url('../img/background8-optimized.jpg');
                 background-size: cover;
                 background-position: center 0px;
                 background-repeat: no-repeat;
-                // background-attachment: fixed;
                 width: 100vw;
                 height: 100vh;
                 position: fixed;
@@ -52,9 +49,6 @@
             .logo{
                 a{
                     padding-left: 20px;
-                    .logo-text{
-                        // font-size: 0.8em;
-                    }
                 }
             }
 
@@ -70,9 +64,7 @@
                         a{
                             font-size: 1em;
                             color: rgba($color: $dark-blue, $alpha: 1) !important;
-                            // &:hover{
-                            //     color: rgba($color: $dark-blue, $alpha: 1);
-                            // }
+
                             &.active{
                                 color: rgba($color: $light-blue, $alpha: 1) !important;
                             }
@@ -106,10 +98,6 @@
                 .hamburger-inner:after{
                     width: 16px;
                     left: 6px;
-                    // bottom: -8px;
-                }
-                .hamburger-inner:before{
-                    // top: -8px;
                 }
             }
         }
@@ -118,11 +106,6 @@
     #hero{
         height: 120%;
         >div{
-            // grid-template-columns: 20px 60% auto 20px;
-            // grid-template-rows: 1fr 20%;
-            // grid-template-areas: 
-            //     ". text . ."
-            //     "project info info info";
             height: 84%;
             display: flex;
 
@@ -198,6 +181,13 @@
 
     #projects-section{
         padding: 15vh 0px;
+
+        .header{
+            .side-menu{
+                display: none;
+            }
+        }
+
         .projects-header{
             height: 200px;
             .title-wrapper{
@@ -220,6 +210,38 @@
         .project{
             margin-bottom: 15px;
         }
+
+        .project.website > div > div > div{
+            h3{
+                font-size: 1em;
+            }
+        }
+
+        .project-background{
+            >div{
+                grid-template-columns: 40px auto 40px;
+                grid-template-rows: auto;
+                grid-template-areas: 
+                    ". text .";
+                .projects-header{
+                    .title-wrapper{
+                        padding-top: 15vh;
+                    }
+                }
+
+                .side-info{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    #project-background-smarthack{
+        background-image: url('../img/project-background-smarthack-mobile.jpg');
+    }
+
+    #project-background-rentit{
+        background-image: url('../img/project-background-rentit-min.png');
     }
     
     #skills-section{
@@ -255,13 +277,14 @@
     #contact-section{
         padding: 20vh 0px;
 
-        .title{
-            margin-bottom: 0;
+        .header{
+            .side-menu{
+                display: none;
+            }
         }
 
-        .hand-wrapper{
-            // width: 80%;
-            // left: 10%;
+        .title{
+            margin-bottom: 0;
         }
 
         .hand-wrapper,
