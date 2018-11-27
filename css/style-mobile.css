@@ -216,10 +216,10 @@
       #projects-section .project-background > div .side-info {
         display: none; }
 
-  #project-background-smarthack {
+  #project-background-smarthack:before {
     background-image: url("../img/project-background-smarthack-mobile.jpg"); }
 
-  #project-background-rentit {
+  #project-background-rentit:before {
     background-image: url("../img/project-background-rentit-min.png"); }
 
   #skills-section {

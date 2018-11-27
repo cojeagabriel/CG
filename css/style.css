@@ -701,7 +701,8 @@ section {
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 1000ms ease; }
+    transition: opacity 1000ms ease;
+    clip: rect(0, auto, auto, 0); }
     #projects-section .project-background:before {
       content: "";
       top: 0;
