@@ -2,12 +2,14 @@ particlesJS("particles-js", { "particles": { "number": { "value": 50, "density":
 
 $(".project.website > div > div").hover(
     function () {
-        // $(".header").addClass("project-hovered");
+        if ($(window).width() > 480)
+            $("#projects-section .header").removeClass("dark");
         $("#" + $(this).data("background")).addClass("project-background-visible");
         $("#projects-section").addClass("light");
     },
     function () {
-        // $(".header").removeClass("project-hovered");
+        if ($(window).width() > 480)
+            $("#projects-section .header").addClass("dark");
         $("#" + $(this).data("background")).removeClass("project-background-visible");
         $("#projects-section").removeClass("light");
         $(".project.website > div > div.hover").removeClass("hover")
@@ -264,7 +266,7 @@ window.onload = function () {
             $(".header.dark-side-menu").removeClass("dark-side-menu");
             hamburgerClicked = false;
         }
-        $("html, body").animate({ scrollTop: $("#" + $(this).data("slide-to")).offset().top }, 1000, $.bez([0.215, 0.61, 0.355, 1]))
+        $("html, body").animate({ scrollTop: $("#" + $(this).data("slide-to")).offset().top + 1 }, 1000, $.bez([0.215, 0.61, 0.355, 1]))
     });
 
 }

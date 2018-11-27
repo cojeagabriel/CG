@@ -278,6 +278,8 @@ section {
               animation-delay: 0.2s; }
             .header nav .main.side-menu.active li:nth-child(4) {
               animation-delay: 0.3s; }
+            .header nav .main.side-menu.active li:nth-child(5) {
+              animation-delay: 0.4s; }
         .header nav .main.side-menu.inactive {
           animation-duration: 1200ms;
           animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -292,6 +294,8 @@ section {
               animation-delay: 160ms; }
             .header nav .main.side-menu.inactive li:nth-child(4) {
               animation-delay: 240ms; }
+            .header nav .main.side-menu.inactive li:nth-child(5) {
+              animation-delay: 320ms; }
   .header .hamburger {
     grid-area: hamburger;
     display: flex;
@@ -343,6 +347,9 @@ section {
       .header.play .main:not(.side-menu) li:nth-child(4) {
         animation-delay: 90ms;
         animation-duration: 3000ms; }
+      .header.play .main:not(.side-menu) li:nth-child(5) {
+        animation-delay: 90ms;
+        animation-duration: 3000ms; }
   .header.play .hamburger {
     animation-name: hamburgerAnimation, fadeIn;
     visibility: visible;
@@ -360,6 +367,8 @@ section {
       .header.play-reverse .main:not(.side-menu) li:nth-child(3) {
         animation-duration: 400ms; }
       .header.play-reverse .main:not(.side-menu) li:nth-child(4) {
+        animation-duration: 300ms; }
+      .header.play-reverse .main:not(.side-menu) li:nth-child(5) {
         animation-duration: 300ms; }
   .header.play-reverse .hamburger {
     animation-name: hamburgerAnimationReverse, fadeOut; }
@@ -512,7 +521,8 @@ section {
     #info-area .info-box p {
       text-align: center;
       color: rgba(255, 255, 255, 0.5); }
-    #info-area .info-box h3 {
+    #info-area .info-box h3,
+    #info-area .info-box h1 {
       color: white;
       font-size: 1.2em;
       margin-bottom: 2vh;
@@ -646,7 +656,7 @@ section {
   opacity: 1 !important; }
 
 #projects-section {
-  padding: 22vh 0px 22vh;
+  padding: 16vh 0px;
   box-sizing: border-box;
   background-color: #f6f7f3;
   position: relative;
@@ -664,7 +674,7 @@ section {
       z-index: 1; }
     #projects-section .projects-header .title-wrapper {
       margin-bottom: 60px; }
-    #projects-section .projects-header.light h1 {
+    #projects-section .projects-header.light h2 {
       color: #f6f7f3; }
     #projects-section .projects-header.light p {
       color: rgba(246, 247, 243, 0.6); }
@@ -996,7 +1006,7 @@ section {
   background-attachment: fixed; }
 
 #skills-section {
-  padding: 22vh 0px 22vh;
+  padding: 16vh 0px 22vh;
   height: auto;
   min-height: auto;
   display: flex;

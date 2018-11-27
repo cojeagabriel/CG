@@ -272,6 +272,9 @@ section{
                         &:nth-child(4){
                             animation-delay: 0.3s;
                         }
+                        &:nth-child(5){
+                            animation-delay: 0.4s;
+                        }
                         animation-name: slideInRight, fadeIn;
                     }
                 }
@@ -291,6 +294,9 @@ section{
                         }
                         &:nth-child(4){
                             animation-delay: 240ms;
+                        }
+                        &:nth-child(5){
+                            animation-delay: 320ms;
                         }
                         animation-name: slideOutRight, fadeOut;
                     }
@@ -373,6 +379,10 @@ section{
                     animation-delay: 90ms;
                     animation-duration: 3000ms;
                 }
+                &:nth-child(5){
+                    animation-delay: 90ms;
+                    animation-duration: 3000ms;
+                }
                 animation-name: slideOutRight;
             }
         }
@@ -400,6 +410,9 @@ section{
                     animation-duration: 400ms;
                 }
                 &:nth-child(4){
+                    animation-duration: 300ms;
+                }
+                &:nth-child(5){
                     animation-duration: 300ms;
                 }
                 animation-name: slideInRight;
@@ -631,7 +644,8 @@ section{
             // letter-spacing: 1px;
         }
 
-        h3{
+        h3,
+        h1{
             color: white;
             font-size: 1.2em;
             margin-bottom: 2vh;
@@ -814,7 +828,7 @@ section{
 }
 
 #projects-section{
-    padding: 22vh 0px 22vh;
+    padding: 16vh 0px;
     box-sizing: border-box;
     background-color: $white;
     position: relative;
@@ -837,7 +851,7 @@ section{
         }
 
         &.light{
-            h1{
+            h2{
                 color: $white;
             }
             p{
@@ -1361,7 +1375,7 @@ section{
 }
 
 #skills-section{
-    padding: 22vh 0px 22vh;
+    padding: 16vh 0px 22vh;
     height: auto;
     min-height: auto;
     display: flex;
