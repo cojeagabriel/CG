@@ -10,6 +10,7 @@ $(".project.website > div > div").hover(
         // $(".header").removeClass("project-hovered");
         $("#" + $(this).data("background")).removeClass("project-background-visible");
         $("#projects-section").removeClass("light");
+        $(".project.website > div > div.hover").removeClass("hover")
     }
 );
 
@@ -25,7 +26,6 @@ function visible(item) {
     var viewTop = w.scrollTop();
     var viewBottom = viewTop + w.height();
     var top = item.offset().top;
-    // var bottom = top + item.height();
     return top < viewBottom;
 }
 
@@ -43,19 +43,6 @@ window.onload = function () {
 
     let hamburgerClicked = false;
 
-    //interactiuni hamburger
-    // $(".hamburger > svg").on("click", ()=>{
-    //     if(!hamburgerClicked){
-    //         $(".main").addClass("side-menu")
-    //         $(".hamburger").addClass("clicked")
-    //         hamburgerClicked = true;
-    //     }
-    //     else{
-    //         $(".main").removeClass("side-menu")
-    //         $(".hamburger").removeClass("clicked")
-    //         hamburgerClicked = false;
-    //     }
-    // })
     $(".hamburger").on("click", ()=>{
         if(!hamburgerClicked){
             $(".main.side-menu").removeClass("inactive")
@@ -81,15 +68,45 @@ window.onload = function () {
     var feather2Top = $(".feather2-wrapper").offset().top;
     var feather3Top = $(".feather3-wrapper").offset().top;
     var contactTop = $("#contact-section").offset().top;
+    var projects = $("#projects-section");
+    var skills = $("#skills-section");
+    var contact = $("#contact-section");
     var ok = false;
 
     var face = $("#face");
     var viewHeight = $(window).height();
     var viewWidth = $(window).width();
 
+
+    $(".project.website > div > div").on("click", function () {
+        if (viewWidth <= 480) {
+            $(".project.website > div > div.hover").removeClass("hover")
+            $(this).addClass("hover")
+        }
+    })
+    
+
     $(window).scroll(function () {
 
         var scrollTop = $(window).scrollTop();
+
+
+        if (scrollTop < projects.offset().top - 30 / 100 * viewHeight){
+            $(".main a.active").removeClass("active")
+            $(".about-link").addClass("active")
+        }
+        if (scrollTop >= projects.offset().top - 30 / 100 * viewHeight && scrollTop < skills.offset().top - 30 / 100 * viewHeight){
+            $(".main a.active").removeClass("active")
+            $(".projects-link").addClass("active")
+        }
+        if (scrollTop >= skills.offset().top - 30 / 100 * viewHeight && scrollTop < contact.offset().top - 30 / 100 * viewHeight){
+            $(".main a.active").removeClass("active")
+            $(".skills-link").addClass("active")
+        }
+        if(scrollTop >= contact.offset().top - 30/100*viewHeight){
+            $(".main a.active").removeClass("active")
+            $(".contact-link").addClass("active")
+        }
 
         //tranzitii hero
         
@@ -232,22 +249,22 @@ window.onload = function () {
     );
 
     //scrollTo
-    $("#hero button").on("click", function(){
-        $("html, body").animate({ scrollTop: $("#contact-section").offset().top }, 1000, $.bez([0.215, 0.61, 0.355, 1]))
-        // $("html, body").animate({ scrollTop: $("#contact-section").offset().top }, 20000, "linear")
-    });
+    // $("#hero button").on("click", function(){
+    //     $("html, body").animate({ scrollTop: $("#contact-section").offset().top }, 1000, $.bez([0.215, 0.61, 0.355, 1]))
+    //     // $("html, body").animate({ scrollTop: $("#contact-section").offset().top }, 20000, "linear")
+    // });
     $(".logo").on("click", function(){
         $("html, body").animate({ scrollTop: 0 }, 1000, $.bez([0.215, 0.61, 0.355, 1]))
     });
-    $(".about").on("click", function(){
+    $(".slide-to").on("click", function(){
         if (viewWidth <= 480) {
-            $(".main.side-menu").removeClass("active")
-            $(".main.side-menu").addClass("inactive")
-            $(".hamburger").removeClass("is-active")
+            $(".main.side-menu.active").removeClass("active")
+            $(".main.side-menu:not('.inactive')").addClass("inactive")
+            $(".hamburger.is-active").removeClass("is-active")
             $(".header.dark-side-menu").removeClass("dark-side-menu");
             hamburgerClicked = false;
         }
-        $("html, body").animate({ scrollTop: 0 }, 1000, $.bez([0.215, 0.61, 0.355, 1]))
+        $("html, body").animate({ scrollTop: $("#" + $(this).data("slide-to")).offset().top }, 1000, $.bez([0.215, 0.61, 0.355, 1]))
     });
 
 }

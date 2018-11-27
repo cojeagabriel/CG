@@ -78,6 +78,9 @@
   .text {
     width: 80% !important; }
 
+  header.play-reverse .hamburger {
+    animation-name: hamburgerAnimation, fadeIn !important; }
+
   .header {
     height: 100px; }
     .header .header-background {
@@ -111,6 +114,9 @@
           color: #18ebf0 !important; }
         .header nav .main.side-menu li a:active {
           color: #18ebf0 !important; }
+        .header nav .main.side-menu li a.resume-link {
+          border-color: #1d213f;
+          margin-top: 15px; }
     .header .hamburger {
       width: 80px;
       animation-name: hamburgerAnimation, fadeIn; }
@@ -166,6 +172,8 @@
             position: absolute;
             top: 0;
             left: 0; }
+          #hero > div #info-area .project .slide-to {
+            opacity: 0; }
         #hero > div #info-area .info-mobile .swiper-container {
           margin: 0; }
           #hero > div #info-area .info-mobile .swiper-container .swiper-slide {

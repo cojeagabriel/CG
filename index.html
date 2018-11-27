@@ -19,7 +19,7 @@
 </head>
 <body>
 
-<header class="header">
+<header class="header play-reverse">
     <div class="header-background">
     </div>
     <nav>
@@ -40,30 +40,36 @@
         </div>
         <ul class="main">
             <li>
-                <a href="#" class="about active">ABOUT</a>
+                <a href="#" class="slide-to about-link active" data-slide-to="hero">ABOUT</a>
             </li>
             <li>
-                <a href="#">RESUME</a>
+                <a href="#" class="slide-to projects-link" data-slide-to="projects-section">PROJECTS</a>
             </li>
             <li>
-                <a href="#">PROJECTS</a>
+                <a href="#" class="slide-to skills-link" data-slide-to="skills-section">SKILLS</a>
             </li>
             <li>
-                <a href="#">CONTACT</a>
+                <a href="#" class="slide-to contact-link" data-slide-to="contact-section">CONTACT</a>
+            </li>
+            <li>
+                <a href="CV-Cojea-Gabriel-2018.pdf" target="_blank" class="resume-link">RESUME</a>
             </li>
         </ul>
         <ul class="main side-menu">
             <li>
-                <a href="#" class="about active">ABOUT</a>
+                <a href="#" class="slide-to about-link active" data-slide-to="hero">ABOUT</a>
             </li>
             <li>
-                <a href="#">RESUME</a>
+                <a href="#" class="slide-to projects-link" data-slide-to="projects-section">PROJECTS</a>
             </li>
             <li>
-                <a href="#">PROJECTS</a>
+                <a href="#" class="slide-to skills-link" data-slide-to="skills-section">SKILLS</a>
             </li>
             <li>
-                <a href="#">CONTACT</a>
+                <a href="#" class="slide-to contact-link" data-slide-to="contact-section">CONTACT</a>
+            </li>
+            <li>
+                <a href="CV-Cojea-Gabriel-2018.pdf" target="_blank" class="resume-link">RESUME</a>
             </li>
         </ul>
     </nav>
@@ -85,8 +91,8 @@
                     I'm Gabriel, a <span class="age"></span> years old frontend developer living in Romania. My goal is to master web technologies to bring beauty and functionality to the web world. At the moment I'm focusing on improving my Angular framework skills. If you need help, I'm open for both freelancing and hiring.
                 </p>
                 <div class="actions d-flex align-center play">
-                    <a href="#" class="link">VIEW RESUME</a>
-                    <button type="button" class="button button-empty button-light">CONTACT ME</button>
+                    <a href="CV-Cojea-Gabriel-2018.pdf" target="_blank" class="link">VIEW RESUME</a>
+                    <button type="button" class="slide-to button button-empty button-light" data-slide-to="contact-section">CONTACT ME</button>
                 </div>
             </div>
             
@@ -112,7 +118,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="slide-to">
+                    <div class="slide-to" data-slide-to="projects-section">
                         <img src="img/arrow-bottom2.svg" alt="">
                     </div>
                 </div>
@@ -130,7 +136,7 @@
                             Web Designer
                         </h3>
                         <p>
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae similique excepturi architecto temporibus
+                            UI/UX designer with a modern and minimalist style, always looking to combine beauty with functionality
                         </p>
                     </div>
                     <div class="info-box"></div>
@@ -187,30 +193,36 @@
                     </div>
                     <ul class="main">
                         <li>
-                            <a href="#" class="about active">ABOUT</a>
+                            <a href="#" class="slide-to about-link active" data-slide-to="hero">ABOUT</a>
                         </li>
                         <li>
-                            <a href="#">RESUME</a>
+                            <a href="#" class="slide-to projects-link" data-slide-to="projects-section">PROJECTS</a>
                         </li>
                         <li>
-                            <a href="#">PROJECTS</a>
+                            <a href="#" class="slide-to skills-link" data-slide-to="skills-section">SKILLS</a>
                         </li>
                         <li>
-                            <a href="#">CONTACT</a>
+                            <a href="#" class="slide-to contact-link" data-slide-to="contact-section">CONTACT</a>
+                        </li>
+                        <li>
+                            <a href="CV-Cojea-Gabriel-2018.pdf" target="_blank" class="resume-link">RESUME</a>
                         </li>
                     </ul>
                     <ul class="main side-menu">
                         <li>
-                            <a href="#" class="about active">ABOUT</a>
+                            <a href="#" class="slide-to about-link active" data-slide-to="hero">ABOUT</a>
                         </li>
                         <li>
-                            <a href="#">RESUME</a>
+                            <a href="#" class="slide-to projects-link" data-slide-to="projects-section">PROJECTS</a>
                         </li>
                         <li>
-                            <a href="#">PROJECTS</a>
+                            <a href="#" class="slide-to skills-link" data-slide-to="skills-section">SKILLS</a>
                         </li>
                         <li>
-                            <a href="#">CONTACT</a>
+                            <a href="#" class="slide-to contact-link" data-slide-to="contact-section">CONTACT</a>
+                        </li>
+                        <li>
+                            <a href="CV-Cojea-Gabriel-2018.pdf" target="_blank" class="resume-link">RESUME</a>
                         </li>
                     </ul>
                 </nav>
@@ -288,7 +300,9 @@
                         <div data-background="project-background-smarthack">
                             <div>
                                 <h3>SMARTHACK</h3>
-                                <i class="fas fa-search"></i>
+                                <a href="http://smarthack.as-mi.ro/" target="_blank">
+                                    <i class="fas fa-search"></i>
+                                </a>
                             </div>
                             <img src="img/smarthack-logo.png" alt="logo-smarthack">
                         </div>
@@ -299,7 +313,9 @@
                         <div data-background="project-background-rentit">
                             <div>
                                 <h3>RENTIT</h3>
-                                <i class="fas fa-search"></i>
+                                <a href="https://rentit-web-prod.herokuapp.com/" target="_blank">
+                                    <i class="fas fa-search"></i>
+                                </a>
                             </div>
                             <img src="img/rentit-logo.png" alt="logo-rentit">
                         </div>
@@ -605,30 +621,36 @@
                     </div>
                     <ul class="main">
                         <li>
-                            <a href="#" class="about active">ABOUT</a>
+                            <a href="#" class="slide-to about-link active" data-slide-to="hero">ABOUT</a>
                         </li>
                         <li>
-                            <a href="#">RESUME</a>
+                            <a href="#" class="slide-to projects-link" data-slide-to="projects-section">PROJECTS</a>
                         </li>
                         <li>
-                            <a href="#">PROJECTS</a>
+                            <a href="#" class="slide-to skills-link" data-slide-to="skills-section">SKILLS</a>
                         </li>
                         <li>
-                            <a href="#">CONTACT</a>
+                            <a href="#" class="slide-to contact-link" data-slide-to="contact-section">CONTACT</a>
+                        </li>
+                        <li>
+                            <a href="CV-Cojea-Gabriel-2018.pdf" target="_blank" class="resume-link">RESUME</a>
                         </li>
                     </ul>
                     <ul class="main side-menu">
                         <li>
-                            <a href="#" class="about active">ABOUT</a>
+                            <a href="#" class="slide-to about-link active" data-slide-to="hero">ABOUT</a>
                         </li>
                         <li>
-                            <a href="#">RESUME</a>
+                            <a href="#" class="slide-to projects-link" data-slide-to="projects-section">PROJECTS</a>
                         </li>
                         <li>
-                            <a href="#">PROJECTS</a>
+                            <a href="#" class="slide-to skills-link" data-slide-to="skills-section">SKILLS</a>
                         </li>
                         <li>
-                            <a href="#">CONTACT</a>
+                            <a href="#" class="slide-to contact-link" data-slide-to="contact-section">CONTACT</a>
+                        </li>
+                        <li>
+                            <a href="CV-Cojea-Gabriel-2018.pdf" target="_blank" class="resume-link">RESUME</a>
                         </li>
                     </ul>
                 </nav>

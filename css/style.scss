@@ -196,12 +196,14 @@ section{
             animation-duration: 600ms;
             animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
             animation-fill-mode: forwards;
+            align-items: center;
 
             li{
                 height: 100%;
                 animation-duration: 1200ms;
                 animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
                 animation-fill-mode: forwards;
+                height: 50px;
                 a{
                     display: flex;
                     align-items: center;
@@ -217,6 +219,15 @@ section{
                     }
                     &.active{
                         color: $light-blue !important;
+                    }
+
+                    &.resume-link{
+                        border: solid 1px rgba($color: $white, $alpha: 0.6);
+                        margin-left: 30px;
+                        transition: border 100ms ease-in-out;
+                        &:hover{
+                            border: solid 1px rgba($color: $white, $alpha: 1);
+                        }
                     }
                 }
             }
@@ -634,6 +645,7 @@ section{
     justify-content: flex-end;
     position: relative;
     padding-bottom: 55px;
+    z-index: 4;
     p{
         position: absolute;
         left: 50%;
@@ -1024,6 +1036,8 @@ section{
                 img{
                     padding: 30px;
                     box-sizing: border-box;
+                    position: relative;
+                    z-index: 4;
                 }
                 >div{
                     position: absolute;
@@ -1031,12 +1045,13 @@ section{
                     padding: 30px 0;
                     width: 100%;
                     height: 100%;
-                    display: flex;
+                    display: none;
                     flex-direction: column;
                     align-items: center;
                     justify-content: space-around;
                     opacity: 0;
                     transition: opacity 300ms ease-in-out;
+                    z-index: 5;
 
                     h3,i{
                         color: #fff;
@@ -1047,16 +1062,32 @@ section{
                     }
                 }
 
-                &:hover{
+                @media screen and (min-width: $screen-xs){
+                    &:hover{
+                        background-color: transparent;
+                        img{
+                            opacity: 0;
+                            position: relative;
+
+                        }
+                        >div{
+                            opacity: 1;
+                            display: flex;
+                        }
+                    }  
+                }
+                &.hover{
                     background-color: transparent;
                     img{
                         opacity: 0;
-                    }
+                        position: relative;
 
+                    }
                     >div{
                         opacity: 1;
+                        display: flex;
                     }
-                }
+                }  
             }
         }
     }

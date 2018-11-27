@@ -17,6 +17,12 @@
         width: 80% !important;
     }
 
+    header.play-reverse{
+        .hamburger{
+            animation-name: hamburgerAnimation, fadeIn !important;
+        }
+    }
+
     .header{
         height: 100px;
 
@@ -70,6 +76,11 @@
                             }
                             &:active{
                                 color: rgba($color: $light-blue, $alpha: 1) !important;
+                            }
+
+                            &.resume-link{
+                                border-color: $dark-blue;
+                                margin-top: 15px;
                             }
                         }
                     }
@@ -149,6 +160,9 @@
                         position: absolute;
                         top: 0;
                         left: 0;
+                    }
+                    .slide-to{
+                        opacity: 0;
                     }
                 }
                 .info-mobile{
