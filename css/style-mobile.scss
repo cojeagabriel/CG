@@ -9,6 +9,16 @@
 
 @media screen and (max-width: $screen-xs-max){
 
+    html{
+        &:before{
+            background-image: url('../img/background8-mobile-optimized.jpg');
+        }
+    }
+
+    .background{
+        background-image: url('../img/background8-mobile-optimized.jpg');
+    }
+
     .title{
         font-size: 15vw;
     }
@@ -36,7 +46,7 @@
         &:not(.dark){
             .header-background:before{
                 content: "";
-                background-image: url('../img/background8-optimized.jpg');
+                background-image: url('../img/background8-mobile-optimized.jpg');
                 background-size: cover;
                 background-position: center 0px;
                 background-repeat: no-repeat;
@@ -255,7 +265,7 @@
     }
 
     #project-background-rentit:before{
-        background-image: url('../img/project-background-rentit-mobile.png');
+        background-image: url('../img/project-background-rentit-mobile.jpg');
     }
     
     #skills-section{

@@ -72,6 +72,12 @@
   .info-mobile {
     display: none !important; } }
 @media screen and (max-width: 767px) {
+  html:before {
+    background-image: url("../img/background8-mobile-optimized.jpg"); }
+
+  .background {
+    background-image: url("../img/background8-mobile-optimized.jpg"); }
+
   .title {
     font-size: 15vw; }
 
@@ -90,7 +96,7 @@
       clip: rect(0, auto, auto, 0); }
     .header:not(.dark) .header-background:before {
       content: "";
-      background-image: url("../img/background8-optimized.jpg");
+      background-image: url("../img/background8-mobile-optimized.jpg");
       background-size: cover;
       background-position: center 0px;
       background-repeat: no-repeat;
@@ -220,7 +226,7 @@
     background-image: url("../img/project-background-smarthack-mobile.jpg"); }
 
   #project-background-rentit:before {
-    background-image: url("../img/project-background-rentit-mobile.png"); }
+    background-image: url("../img/project-background-rentit-mobile.jpg"); }
 
   #skills-section {
     padding: 15vh 0px; }
