@@ -95,19 +95,19 @@ window.onload = function () {
 
         if (scrollTop < projects.offset().top - 30 / 100 * viewHeight){
             $(".main a.active").removeClass("active")
-            $(".about-link").addClass("active")
+            $(".about-link:not('.active')").addClass("active")
         }
         if (scrollTop >= projects.offset().top - 30 / 100 * viewHeight && scrollTop < skills.offset().top - 30 / 100 * viewHeight){
             $(".main a.active").removeClass("active")
-            $(".projects-link").addClass("active")
+            $(".projects-link:not('.active')").addClass("active")
         }
         if (scrollTop >= skills.offset().top - 30 / 100 * viewHeight && scrollTop < contact.offset().top - 30 / 100 * viewHeight){
             $(".main a.active").removeClass("active")
-            $(".skills-link").addClass("active")
+            $(".skills-link:not('.active')").addClass("active")
         }
         if(scrollTop >= contact.offset().top - 30/100*viewHeight){
             $(".main a.active").removeClass("active")
-            $(".contact-link").addClass("active")
+            $(".contact-link:not('.active')").addClass("active")
         }
 
         //tranzitii hero
@@ -255,18 +255,18 @@ window.onload = function () {
     //     $("html, body").animate({ scrollTop: $("#contact-section").offset().top }, 1000, $.bez([0.215, 0.61, 0.355, 1]))
     //     // $("html, body").animate({ scrollTop: $("#contact-section").offset().top }, 20000, "linear")
     // });
-    $(".logo").on("click", function(){
-        $("html, body").animate({ scrollTop: 0 }, 1000, $.bez([0.215, 0.61, 0.355, 1]))
-    });
-    $(".slide-to").on("click", function(){
-        if (viewWidth <= 480) {
-            $(".main.side-menu.active").removeClass("active")
-            $(".main.side-menu:not('.inactive')").addClass("inactive")
-            $(".hamburger.is-active").removeClass("is-active")
-            $(".header.dark-side-menu").removeClass("dark-side-menu");
-            hamburgerClicked = false;
-        }
-        $("html, body").animate({ scrollTop: $("#" + $(this).data("slide-to")).offset().top + 1 }, 1000, $.bez([0.215, 0.61, 0.355, 1]))
-    });
+    // $(".logo").on("click", function(){
+    //     $("html, body").animate({ scrollTop: 0 }, 1000, $.bez([0.215, 0.61, 0.355, 1]))
+    // });
+    // $(".slide-to").on("click", function(){
+    //     if (viewWidth <= 480) {
+    //         $(".main.side-menu.active").removeClass("active")
+    //         $(".main.side-menu:not('.inactive')").addClass("inactive")
+    //         $(".hamburger.is-active").removeClass("is-active")
+    //         $(".header.dark-side-menu").removeClass("dark-side-menu");
+    //         hamburgerClicked = false;
+    //     }
+    //     $("html, body").animate({ scrollTop: $("#" + $(this).data("slide-to")).offset().top + 1, behavior: 'smooth'}, 1000, $.bez([0.215, 0.61, 0.355, 1]))
+    // });
 
 }
