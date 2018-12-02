@@ -46,6 +46,7 @@ window.onload = function () {
     let hamburgerClicked = false;
 
     $(".hamburger").on("click", ()=>{
+        $(".side-menu.untouched").removeClass("untouched");
         if(!hamburgerClicked){
             $(".main.side-menu").removeClass("inactive")
             $(".main.side-menu").addClass("active")
@@ -255,18 +256,25 @@ window.onload = function () {
     //     $("html, body").animate({ scrollTop: $("#contact-section").offset().top }, 1000, $.bez([0.215, 0.61, 0.355, 1]))
     //     // $("html, body").animate({ scrollTop: $("#contact-section").offset().top }, 20000, "linear")
     // });
-    // $(".logo").on("click", function(){
-    //     $("html, body").animate({ scrollTop: 0 }, 1000, $.bez([0.215, 0.61, 0.355, 1]))
-    // });
-    // $(".slide-to").on("click", function(){
-    //     if (viewWidth <= 480) {
-    //         $(".main.side-menu.active").removeClass("active")
-    //         $(".main.side-menu:not('.inactive')").addClass("inactive")
-    //         $(".hamburger.is-active").removeClass("is-active")
-    //         $(".header.dark-side-menu").removeClass("dark-side-menu");
-    //         hamburgerClicked = false;
-    //     }
-    //     $("html, body").animate({ scrollTop: $("#" + $(this).data("slide-to")).offset().top + 1, behavior: 'smooth'}, 1000, $.bez([0.215, 0.61, 0.355, 1]))
-    // });
+    $(".logo").on("click", function(){
+        if (viewWidth <= 480) {
+            $(".main.side-menu.active").removeClass("active")
+            $(".main.side-menu:not('.inactive'):not('.untouched')").addClass("inactive")
+            $(".hamburger.is-active").removeClass("is-active")
+            $(".header.dark-side-menu").removeClass("dark-side-menu");
+            hamburgerClicked = false;
+        }
+        // $("html, body").animate({ scrollTop: 0 }, 1000, $.bez([0.215, 0.61, 0.355, 1]))
+    });
+    $(".slide-to").on("click", function(){
+        if (viewWidth <= 480) {
+            $(".main.side-menu.active").removeClass("active")
+            $(".main.side-menu:not('.inactive'):not('.untouched')").addClass("inactive")
+            $(".hamburger.is-active").removeClass("is-active")
+            $(".header.dark-side-menu").removeClass("dark-side-menu");
+            hamburgerClicked = false;
+        }
+        // $("html, body").animate({ scrollTop: $("#" + $(this).data("slide-to")).offset().top + 1, behavior: 'smooth'}, 1000, $.bez([0.215, 0.61, 0.355, 1]))
+    });
 
 }
