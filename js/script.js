@@ -80,7 +80,6 @@ window.onload = function () {
     var viewHeight = $(window).height();
     var viewWidth = $(window).width();
 
-
     $(".project.website > div > div").on("click", function () {
         if (viewWidth <= 480) {
             $(".project.website > div > div.hover").removeClass("hover")
@@ -92,7 +91,6 @@ window.onload = function () {
     $(window).scroll(function () {
 
         var scrollTop = $(window).scrollTop();
-
 
         if (scrollTop < projects.offset().top - 30 / 100 * viewHeight){
             $(".main a.active").removeClass("active")
@@ -181,8 +179,8 @@ window.onload = function () {
                 if ((scrollTop - contactTop) * 0.6 < 0) {
                     $(".hand").css({
                         "top": "0px",
-                        "transform": "translate3d(0," + (scrollTop - contactTop) * 0.6 + "px,0)",
-                        "background-position": "center " + -(scrollTop - contactTop) * 0.6 + "px"
+                        "transform": "translate3d(0," + ((scrollTop - contactTop) * 0.6) + "px, 0)",
+                        "background-position": "center " + -((scrollTop - contactTop) * 0.6) + "px"
                     });
                 }
             }
@@ -194,6 +192,22 @@ window.onload = function () {
                         "background-position": "center " + -(scrollTop - contactTop) * 0.35 + "px"
                     });
                 }
+            }
+
+            var scrollHeight = $(document).height();
+            var scrollPosition = $(window).height() + $(window).scrollTop();
+            if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+                $(".hand").css({
+                    "top": "0px",
+                    "transform": "translate3d(0, 0, 0)",
+                    "background-position": "center 0"
+                });
+
+                $(".pigeon").css({
+                    "top": "0px",
+                    "transform": "translate3d(0,0,0)",
+                    "background-position": "center 0"
+                });
             }
 
             //tranzitii header
