@@ -527,8 +527,8 @@ section {
 .header nav .main li a.resume-link {
   border: solid 1px rgba(246, 247, 243, 0.6);
   margin-left: 30px;
-  -webkit-transition: border 100ms ease-in-out;
-  transition: border 100ms ease-in-out;
+  -webkit-transition: all 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
 }
 
 .header nav .main li a.resume-link:hover {
@@ -865,6 +865,11 @@ section {
 
 #hero .actions .link {
   margin-right: 3.5vw;
+  color: #8DEB00;
+}
+
+#hero .actions .button {
+  font-size: 14px;
 }
 
 .title {
@@ -878,6 +883,7 @@ section {
 .text {
   line-height: 1.5em;
   color: #1d213f;
+  font-size: 14px;
 }
 
 .text-center {
@@ -909,8 +915,8 @@ section {
 }
 
 #info-area > .project .swiper-container {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   background-color: #f6f7f3;
   margin: 0;
   visibility: hidden;
@@ -929,7 +935,7 @@ section {
   height: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 10%;
+  padding: 20%;
 }
 
 #info-area > .project .swiper-container .swiper-slide > img {
@@ -1048,28 +1054,30 @@ section {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: baseline;
-      -ms-flex-pack: baseline;
-          justify-content: baseline;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 2.3vw;
+  padding-left: 3vw;
 }
 
 #info-area .info-box p {
-  text-align: center;
   color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5;
+  font-size: 14px;
 }
 
 #info-area .info-box h3,
 #info-area .info-box h1 {
   color: white;
-  font-size: 1.2em;
-  margin-bottom: 2vh;
-  font-family: "proxima_nova_altbold", Georgia, sans-serif;
+  font-size: 1.6em;
+  margin-bottom: 3vh;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
 }
 
 .social-media {
@@ -1926,11 +1934,11 @@ section {
 
 #skills-section .subtitle {
   text-transform: uppercase;
-  font-size: 0.8em;
+  font-size: 14px;
   font-family: "proxima_nova_altbold", Georgia, sans-serif;
   color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 60px;
-  margin-top: 30px;
+  margin-bottom: 48px;
+  margin-top: 48px;
   -webkit-animation-duration: 1200ms;
           animation-duration: 1200ms;
   -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -1976,7 +1984,7 @@ section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 45px;
+  margin-bottom: 36px;
   -webkit-animation-duration: 1200ms;
           animation-duration: 1200ms;
   -webkit-animation-delay: 0.2s;
@@ -2007,8 +2015,15 @@ section {
 }
 
 #skills-section .skill .skill-name {
-  color: rgba(246, 247, 243, 0.6);
-  margin-bottom: 10px;
+  color: #f6f7f3;
+  font-size: 14px;
+}
+
+#skills-section .skill .skill-name-container {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  min-width: 60px;
 }
 
 #skills-section .skill .skill-score {
@@ -2044,7 +2059,6 @@ section {
 /* ---- reset ---- */
 canvas {
   display: block;
-  vertical-align: bottom;
 }
 
 /* ---- particles.js container ---- */
@@ -2193,6 +2207,163 @@ canvas {
 
 .mt-5 {
   margin-top: 68px !important;
+}
+
+#experience-section {
+  color: #f6f7f3;
+  padding-top: 16vh;
+  height: auto;
+}
+
+#experience-section .content {
+  margin-left: 25%;
+  width: 25%;
+  margin-bottom: 2rem;
+}
+
+#experience-section .date-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+}
+
+#experience-section .date-container .date {
+  font-size: 0.7rem;
+  color: rgba(246, 247, 243, 0.3);
+  text-transform: uppercase;
+  font-family: "proxima_nova_altbold", Georgia, sans-serif;
+}
+
+#experience-section .date-container .date-line {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 1px;
+  background-color: rgba(246, 247, 243, 0.1);
+  margin: 0 7px;
+}
+
+#experience-section .company-name {
+  color: rgba(246, 247, 243, 0.6);
+  margin-bottom: 3rem;
+}
+
+#experience-section .company-name a {
+  color: #f6f7f3;
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+}
+
+#experience-section p {
+  color: rgba(246, 247, 243, 0.6);
+  text-align: justify;
+}
+
+.experience-projects-container {
+  width: 50%;
+  margin-left: 50%;
+  position: relative;
+  margin-bottom: 16vh;
+}
+
+.experience-projects-container > span {
+  position: absolute;
+  right: 100%;
+  top: 1rem;
+  text-transform: uppercase;
+  font-family: "proxima_nova_altbold", Georgia, sans-serif;
+  color: #8deb00;
+}
+
+.experience-projects-container > span:after {
+  content: "";
+  position: absolute;
+  left: calc(100% + 1rem);
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 1px;
+  width: 1rem;
+  background-color: #8deb00;
+}
+
+.experience-projects-container .experience-projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 3rem;
+}
+
+.experience-projects-container .experience-project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 6rem;
+}
+
+.experience-projects-container .experience-project-name {
+  font-family: "Playfair Display", serif;
+  font-size: 2.3rem;
+  text-transform: uppercase;
+  color: rgba(246, 247, 243, 0.6);
+  -webkit-transition: all .15s ease;
+  transition: all .15s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.experience-projects-container .experience-project-link {
+  color: #18ebf0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 0;
+  opacity: 0;
+  -webkit-transition: all .15s ease;
+  transition: all .15s ease;
+  font-size: 0.9rem;
+  text-transform: none;
+}
+
+.experience-projects-container .experience-project:hover .experience-project-name {
+  color: #f6f7f3;
+  font-size: 2.6rem;
+}
+
+.experience-projects-container .experience-project:hover .experience-project-link {
+  height: auto;
+  opacity: 1;
+}
+
+.subtitle {
+  font-size: 2.6rem;
+  font-family: "Playfair Display", serif;
 }
 
 @media (max-width: 479px) {

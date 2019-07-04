@@ -227,7 +227,7 @@ section{
                     &.resume-link{
                         border: solid 1px rgba($color: $white, $alpha: 0.6);
                         margin-left: 30px;
-                        transition: border 100ms ease-in-out;
+                        transition: all 100ms ease-in-out;
                         &:hover{
                             border: solid 1px rgba($color: $white, $alpha: 1);
                         }
@@ -343,9 +343,6 @@ section{
                 width: 20px;
                 left: 6px;
                 // bottom: -8px;
-            }
-            .hamburger-inner:before{
-                // top: -8px;
             }
         }
 
@@ -505,6 +502,11 @@ section{
     .actions{
         .link{
             margin-right: 3.5vw;
+            color: #8DEB00;
+        }
+
+        .button{
+            font-size: 14px;
         }
     }
 }
@@ -519,7 +521,8 @@ section{
 
 .text{
     line-height: 1.5em;
-    color: $dark-blue
+    color: $dark-blue;
+    font-size: 14px;
 }
 
 .text-center{
@@ -544,8 +547,8 @@ section{
         overflow: hidden;
 
         .swiper-container{
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             background-color: $white;
             margin: 0;
             visibility: hidden;
@@ -559,7 +562,7 @@ section{
                 width: 100%;
                 height: 100%;
                 box-sizing: border-box;
-                padding: 10%;
+                padding: 20%;
                 >img{
                     object-fit: contain;
                     width: 100%;
@@ -641,24 +644,28 @@ section{
         flex: 1 !important;
         display: flex;
         flex-direction: column;
-        justify-content: baseline;
-        align-items: center;
+        justify-content: center;
+        align-items: flex-start;
         box-sizing: border-box;
-        padding: 2.3vw;
+        padding-left: 3vw;
 
         p{
-            text-align: center;
+            // text-align: center;
             color: rgba(255, 255, 255, 0.5);
+            line-height: 1.5;
+            font-size: 14px;
             // letter-spacing: 1px;
         }
 
         h3,
         h1{
             color: white;
-            font-size: 1.2em;
-            margin-bottom: 2vh;
-            font-family: $font-primary-bold;
+            font-size: 1.6em;
+            margin-bottom: 3vh;
+            font-family: $font-serif;
+            font-weight: 400;
         }
+
     }
 }
 
@@ -767,10 +774,6 @@ section{
     .text{
         // white-space: nowrap;
         display: inline !important;
-    }
-
-    .age{
-        // margin: 0 0.2em;
     }
 
     .title{
@@ -1406,11 +1409,11 @@ section{
 
     .subtitle{
         text-transform: uppercase;
-        font-size: 0.8em;
+        font-size: 14px;
         font-family: $font-primary-bold;
         color: rgba($color: white, $alpha: 0.6);
-        margin-bottom: 60px;
-        margin-top: 30px;
+        margin-bottom: 48px;
+        margin-top: 48px;
         animation-duration: 1200ms;
         // animation-delay: 1s;
         animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -1448,7 +1451,7 @@ section{
         display: flex;
         // align-items: center;
         justify-content: center;
-        margin-bottom: 45px;
+        margin-bottom: 36px;
         animation-duration: 1200ms;
         animation-delay: 0.2s;
         animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -1470,8 +1473,14 @@ section{
         }
 
         .skill-name{
-            color: rgba($color: $white, $alpha: 0.6);
-            margin-bottom: 10px;
+            color: rgba($color: $white, $alpha: 1);
+            // margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .skill-name-container{
+            flex-grow: 1;
+            min-width: 60px;
         }
 
         .skill-score{
@@ -1505,7 +1514,7 @@ section{
 #particles-js{
     z-index: -1;
 }
-/* ---- reset ---- */ canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container ---- */ #particles-js{ position:fixed; width: 100%; height: 100%; background-color: transparent; background-image: url(""); background-repeat: no-repeat; background-size: 20%; background-position: 50% 50%; } /* ---- stats.js ---- */ .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } .js-count-particles{ font-size: 1.1em; } #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }
+/* ---- reset ---- */ canvas{ display: block; } /* ---- particles.js container ---- */ #particles-js{ position:fixed; width: 100%; height: 100%; background-color: transparent; background-image: url(""); background-repeat: no-repeat; background-size: 20%; background-position: 50% 50%; } /* ---- stats.js ---- */ .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } .js-count-particles{ font-size: 1.1em; } #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }
 
 
 .lg-object{
@@ -1609,6 +1618,146 @@ section{
 .mt-5 {
   margin-top: 68px !important;
 }
+
+
+
+
+#experience-section{
+    color: $white;
+    padding-top: 16vh;
+    height: auto;
+
+    .content{
+        margin-left: 25%;
+        width: 25%;
+        margin-bottom: 2rem;
+    }
+
+    .date-container{
+        display: flex;
+        align-items: center;
+        width: 50%;
+
+        .date{
+            font-size: 0.7rem;
+            color: rgba($color: $white, $alpha: 0.3);
+            text-transform: uppercase;
+            font-family: $font-primary-bold;
+        }
+
+        .date-line{
+            flex: 1;
+            height: 1px;
+            background-color: rgba($color: $white, $alpha: 0.1);
+            margin: 0 7px;
+        }
+    }
+
+    .company-name{
+        color: rgba($color: $white, $alpha: 0.6);
+        margin-bottom: 3rem;
+
+        a{
+            color: $white;
+            font-family: $font-serif;
+            font-size: 1.3rem;
+        }
+    }
+
+    p{
+        color: rgba($color: $white, $alpha: 0.6);
+        text-align: justify;
+    }
+}
+
+.experience-projects-container{
+    width: 50%;
+    margin-left: 50%;
+    position: relative;
+    margin-bottom: 16vh;
+
+    >span{
+        position: absolute;
+        right: 100%;
+        top: 1rem;
+
+        text-transform: uppercase;
+        font-family: $font-primary-bold;
+        color: $light-green;
+
+        &:after{
+            content: "";
+            position: absolute;
+            left: calc(100% + 1rem);
+            top: 50%;
+            transform: translateY(-50%);
+
+            height: 1px;
+            width: 1rem;
+            background-color: $light-green;
+        }
+
+    }
+
+    .experience-projects{
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-left: 3rem;
+    }
+
+    .experience-project{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        height: 6rem;
+    }
+
+    .experience-project-name{
+        font-family: $font-serif;
+        font-size: 2.3rem;
+        text-transform: uppercase;
+        color: rgba($color: $white, $alpha: 0.6);
+        transition: all .15s ease;
+        
+        display: flex;
+        flex-direction: column;
+    }
+
+    .experience-project-link{
+        color: $light-blue;
+        display: flex;
+        height: 0;
+        opacity: 0;
+        transition: all .15s ease;
+        font-size: 0.9rem;
+        text-transform: none;
+    }
+
+
+    .experience-project:hover{
+        .experience-project-name{
+            color: $white;
+            font-size: 2.6rem;
+        }
+
+        .experience-project-link{
+            height: auto;
+            opacity: 1;
+        }
+    }
+}
+
+.subtitle{
+    font-size: 2.6rem;
+    font-family: $font-serif;
+    // text-transform: uppercase;
+}
+
+
+
+
 
 @media (max-width: 479px){
     html{
